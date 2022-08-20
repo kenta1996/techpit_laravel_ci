@@ -14,6 +14,6 @@ jobs:
       - run: npm ci
       - run: npm run dex
       # テストの実行
-      - run :
-        name: php test
-        command: vendor/bin/phpunit
+      - run:
+          name: php test
+          command: vendor/bin/phpunit
