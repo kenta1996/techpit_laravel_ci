@@ -20,7 +20,7 @@ class ArticleControllerTest extends TestCase
             // 200であればテストに合格
             // 200以外であればテストに不合格
         // assertViewIsはarticles.indexが表示されているかテスト
-        $response->assertStatus(200)
+        $response->assertStatus(400)
             ->assertViewIs('articles.index');
     }
 
