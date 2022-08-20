@@ -9,7 +9,7 @@ jobs:
       # エラー回避
       - run: sudo composer self-update --1
       # PHP関連パッケージをインストール
-      - run: composer install -n --prefer -dist
+      - run: composer install -n --prefer-dist
       # avaScript関連パッケージをインストール
       - run: npm ci
       - run: npm run dex
