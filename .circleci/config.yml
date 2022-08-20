@@ -5,9 +5,9 @@ jobs:
       - image: circleci/php:7.3-node-browsers
       - image: circleci/postgres:11.6-alpine
         environment:
-            POSTGRES_DB: larasns
-            POSTGRES_USER: default
-            POSTGRES_PASSWORD: secret
+          POSTGRES_DB: larasns
+          POSTGRES_USER: default
+          POSTGRES_PASSWORD: secret
     environment:
         APP_ENV: testing
         DB_CONNECTION: pgsql
