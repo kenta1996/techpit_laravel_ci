@@ -59,18 +59,18 @@ jobs:
       - run: npm run prod
       - run:
           name: archive artifacts
-          command: zip -ryq techpit_laravel_ci.zip .
+          command: zip -ryq laravel-ci.zip .
       - aws-cli/install
       - run:
           name: upload artifacts to s3
-          command: aws s3 cp techpit_laravel_ci.zip s3://${AWS_S3_BUCKET_NAME}
+          command: aws s3 cp laravel-ci.zip s3://${AWS_S3_BUCKET_NAME}
       - run:
           name: deploy to prod
           command: |
             aws deploy create-deployment \
-            --application-name techpit_laravel_ci \
-            --deployment-group-name techpit_laravel_ci \
-            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=techpit_laravel_ci.zip,bundleType=zip
+            --application-name laravel-ci \
+            --deployment-group-name laravel-ci \
+            --s3-location bucket=${AWS_S3_BUCKET_NAME},key=laravel-ci.zip,bundleType=zip
 
 orbs:
   aws-cli: circleci/aws-cli@1.0.0
